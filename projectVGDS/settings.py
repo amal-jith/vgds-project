@@ -129,6 +129,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 #STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# Adjust media URL for production so it's served from staticfiles
+if not DEBUG:
+    MEDIA_URL = '/staticfiles/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
